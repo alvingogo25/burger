@@ -1,0 +1,23 @@
+var express = require("express");
+var methodOverride = require("method-override");
+var bodyParser = require("body-parser");
+
+var app = express();
+
+app.use(express.static("public"));
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+var routes = require("./controllers/catsController.js");
+
+app.use(routes);
+
+app.listen(PORT, function() {
+  console.log("App now listening at localhost:" + PORT);
+});
