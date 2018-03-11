@@ -1,0 +1,10 @@
+.container {
+  margin: 5% 10%;
+}
+
+.burgers {
+  display: flex;
+  display: inline-block;
+  justify-content: space-between;
+  flex-direction: column;
+}

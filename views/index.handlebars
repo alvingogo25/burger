@@ -1,18 +1,37 @@
 <h1>Burgers</h1>
 
 <div class="container">
-  <!-- uneaten bugers -->
+  <!-- burgers list -->
   <div class="">
+    <!-- uneaten bugers -->
+    <div class="burgers">
+      <h3>Uneaten</h3>
+      {{#each burgers}}
+        {{#unless devoured}}
+      <p>{{this.burger_name}}</p>
+      <button type="button" name="button">Eat it!</button>
+        {{/unless}}
+      {{/each}}
+    </div>
 
-  </div>
-
-  <!-- eaten burgers -->
-  <div class="">
+    <!-- eaten burgers -->
+    <div class="burgers">
+      <h3>Eaten</h3>
+      {{#each burgers}}
+        {{#if devoured}}
+      <p>{{this.burger_name}}</p>
+        {{/if}}
+      {{/each}}
+    </div>
 
   </div>
 
   <!-- new burger submit box -->
   <div class="">
-
+    <h3>Add a Burger</h3>
+    <form class="add-new" action="/api/burgers" method="post">
+      <textarea name="burger_name" rows="8" cols="80" placeholder="Enter Burger Here!"></textarea>
+      <button type="submit" name="button">Submit</button>
+    </form>
   </div>
 </div>
