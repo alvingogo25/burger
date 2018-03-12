@@ -15,17 +15,21 @@ body {
 .burgers {
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
+  justify-content: center;
   margin: 0 10%;
   width: 300px;
 }
 
 .newburger {
   display: flex;
-  align-content: space-between;
-
+  flex-direction: column;
+  align-items: center;
 }
 
+h1 {
+  display: flex;
+  justify-content: center;
+}
 p {
   display: flex;
   border: solid;
@@ -36,4 +40,8 @@ p {
 .eat {
   justify-content: flex-end;
   margin-left: 10px;
+}
+
+textarea {
+  border: solid;
 }
