@@ -1,13 +1,13 @@
+<h1>Burgers</h1>
 <!-- burgers list -->
-<div class="container">
-  <h1>Burgers</h1>
+<div class="burgerslist">
   <!-- uneaten bugers -->
   <div class="burgers">
     <h3>Uneaten</h3>
     {{#each burgers}}
       {{#unless devoured}}
-        <p>{{burger_name}}</p>
-          <button type="submit" class="eat" name="{{id}}">Eat it!</button>
+        <p>{{burger_name}} <button type="submit" class="eat" name="{{id}}">Eat it!</button></p>
+
       {{/unless}}
     {{/each}}
   </div>
@@ -21,14 +21,13 @@
       {{/if}}
     {{/each}}
   </div>
-
 </div>
 
 <!-- new burger submit box -->
-<div class="newburger">
-  <h3>Add a Burger</h3>
-  <form class="add-new" action="/api/burgers" method="post">
-    <textarea name="burger_name" rows="8" cols="80" placeholder="Enter Burger Here!"></textarea>
-    <button type="submit" name="button">Submit</button>
-  </form>
-</div>
+  <div class="newburger">
+    <h3>Add a Burger</h3>
+    <form class="add-new" action="/api/burgers" method="post">
+      <textarea name="burger_name" rows="8" cols="50" placeholder="Enter Burger Here!"></textarea>
+      <button type="submit" name="button">Submit</button>
+    </form>
+  </div>

@@ -1,21 +1,39 @@
+body {
+  font-family: sans-serif;
+}
 .container {
-  display: flex;
   justify-content: center;
   margin: 5% 10%;
 }
 
+.burgerslist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
 .burgers {
   display: flex;
-  display: inline-block;
-  justify-content: space-between;
   flex-direction: column;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   margin: 0 10%;
+  width: 300px;
 }
 
 .newburger {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  align-content: space-between;
 
+}
+
+p {
+  display: flex;
+  border: solid;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.eat {
+  justify-content: flex-end;
+  margin-left: 10px;
 }
