@@ -8,13 +8,13 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject)
   });
 });
 
 router.post("/api/burgers", function(req, res) {
-  console.log(req.body);
+
   burger.create("burger_name", req.body.burger_name, function(results) {
     res.end();
   });
@@ -23,9 +23,9 @@ router.post("/api/burgers", function(req, res) {
 
 router.put("/api/burgers/:id", function(req, res) {
   var devoured = "id = " + req.params.id;
-
+  console.log(devoured);
   burger.update({
-    devoured: req.body.devoured
+    devoured: 1
   }, devoured, function(res) {
     if (res.changedRows = 0) {
       return res.status(404).end();
