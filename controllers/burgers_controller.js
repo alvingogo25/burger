@@ -22,18 +22,17 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-  var devoured = "id = " + req.params.id;
-  console.log(devoured);
+  var burgerid = "id = " + req.params.id;
+
   burger.update({
     devoured: 1
-  }, devoured, function(res) {
+  }, burgerid, function(result) {
     if (res.changedRows = 0) {
       return res.status(404).end();
     } else {
       res.status(200).end();
     }
   });
-  res.redirect('/');
 });
 
 module.exports = router;

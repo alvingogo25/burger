@@ -3,8 +3,7 @@ $(function() {
     event.preventDefault();
     console.log('hit');
     var devouredBurger = {
-      id: parseInt($(this).attr('name')),
-      devoured: 1
+      id: parseInt($(this).attr('name'))
     };
     console.log(devouredBurger);
     $.ajax("/api/burgers/" + $(this).attr('name'), {
@@ -12,6 +11,7 @@ $(function() {
       data: devouredBurger
     }).then(function() {
       console.log('burger was eaten');
+      location.reload();
     });
   });
 });
