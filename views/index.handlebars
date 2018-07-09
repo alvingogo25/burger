@@ -17,7 +17,7 @@
     <h3>Eaten</h3>
     {{#each burgers}}
       {{#if devoured}}
-        <p>{{burger_name}}</p>
+        <p>{{burger_name}} <button type="submit" class="remove" name="{{id}}">Remove</button></p>
       {{/if}}
     {{/each}}
   </div>

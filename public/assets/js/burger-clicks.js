@@ -14,4 +14,18 @@ $(function() {
       location.reload();
     });
   });
+
+  $(".remove").on('click', function (event) {
+    console.log('hit2');
+    // var removeBurger = {
+    //     id: parseInt($(this).attr('name'))
+    // };
+    // console.log(removeBurger);
+    $.ajax("/api/burgers/" + $(this).attr('name'), {
+      type: "DELETE"
+    }).then(function () {
+      console.log('burger was removed');
+      location.reload();
+    });
+  });
 });

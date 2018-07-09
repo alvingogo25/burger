@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
 
-  burger.create("burger_name", req.body.burger_name, function(results) {
+  burger.create("burger_name", req.body.burger_name, function(result) {
     res.end();
   });
   res.redirect('/');
@@ -27,12 +27,24 @@ router.put("/api/burgers/:id", function(req, res) {
   burger.update({
     devoured: 1
   }, burgerid, function(result) {
-    if (res.changedRows = 0) {
+    if (res.changedRows == 0) {
       return res.status(404).end();
     } else {
       res.status(200).end();
     }
   });
+});
+
+router.delete("/api/burger/:id", function(req, res) {
+  var burgerid = "id = " + req.params.id;
+
+  burger.delete(burgerid, function(result) {
+      if (res.affectedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+  })
 });
 
 module.exports = router;

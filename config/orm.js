@@ -66,6 +66,19 @@ var orm = {
       }
       cb(res);
     });
+  },
+// deleteOne function
+  deleteOne: function(table, removeBurger, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += removeBurger;
+
+    connection.query(queryString, function (err, res) {
+      if (err) {
+        throw err;
+      }
+      cb(res);
+    });
   }
 };
 
