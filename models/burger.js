@@ -18,13 +18,13 @@ var burger = {
     orm.update("burgers", objColVals, devoured, function(res) {
       cb(res);
     });
-  }
+  },
 // delete function
-  // delete: function(burgerid, cb) {
-  //   orm.delete("burgers", burgerid, function(res) {
-  //     cb(res);
-  //   });
-  // }
+  delete: function(burgerid, cb) {
+    orm.delete("burgers", burgerid, function(res) {
+      cb(res);
+    });
+  }
 };
 
 module.exports = burger;

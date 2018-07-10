@@ -17,21 +17,21 @@ $(function() {
   });
 
   // remove burger on click
-  // $(".remove").on("click", function(event) {
-  //   var id = $(this).data("id");
-  //   var removeBurger = {
-  //     id: parseInt(id)
-  //   }
-  //   console.log("remove", id);
+  $(".remove").on("click", function(event) {
+    var id = $(this).data("id");
+    var removeBurger = {
+      id: parseInt(id)
+    }
+    console.log("remove", id);
 
-  //   $.ajax("/api/burgers/" + id, {
-  //     type: "DELETE",
-  //     data: removeBurger
-  //   }).then(
-  //     function() {
-  //       console.log("deleted burger", id);
-  //       // Reload the page to get the updated list
-  //       location.reload();
-  //   });
-  // });
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE",
+      data: removeBurger
+    }).then(
+      function() {
+        console.log("deleted burger", id);
+        // Reload the page to get the updated list
+        location.reload();
+    });
+  });
 });

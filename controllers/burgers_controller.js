@@ -33,16 +33,16 @@ router.put("/api/burgers/:id", function(req, res) {
   });
 });
 
-// router.delete("/api/burger/:id", function(req, res) {
-//   var burgerid = "id = " + req.params.id;
+router.delete("/api/burgers/:id", function(req, res) {
+  var burgerid = "id = " + req.params.id;
 
-//   burger.delete(burgerid, function(result) {
-//       if (result.affectedRows == 0) {
-//         return res.status(404).end();
-//       } else {
-//         res.send(200).end();
-//       }
-//   });
-// });
+  burger.delete(burgerid, function(result) {
+      if (result.affectedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.send(200).end();
+      }
+  });
+});
 
 module.exports = router;

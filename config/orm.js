@@ -66,22 +66,22 @@ var orm = {
       }
       cb(res);
     });
-  }
+  },
 // delete query
-  // delete: function(table, burgerid, cb) {
-  //   var queryString = "DELETE FROM " + table;
-  //   queryString += " WHERE ";
-  //   queryString += burgerid;
+  delete: function(table, burgerid, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += burgerid;
 
-  //   console.log(queryString)
+    console.log(queryString)
 
-  //   connection.query(queryString, function (err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     cb(result);
-  //   });
-  // }
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  }
 };
 
 module.exports = orm;
