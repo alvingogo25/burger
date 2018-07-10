@@ -7,24 +7,24 @@ var burger = {
       cb(res);
     });
   },
-// insertOne function
+// insert function
   create: function(cols, vals, cb) {
-    orm.insertOne("burgers", cols, vals, function(res) {
+    orm.insert("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
-// updateOne function
+// update function
   update: function(objColVals, devoured, cb) {
-    orm.updateOne("burgers", objColVals, devoured, function(res) {
+    orm.update("burgers", objColVals, devoured, function(res) {
       cb(res);
     });
-  },
-// deleteOne function
-  delete: function(condition, cb) {
-    orm.deleteOne("burgers", condition, function(res) {
-      cb(res);
-    })
   }
+// delete function
+  // delete: function(burgerid, cb) {
+  //   orm.delete("burgers", burgerid, function(res) {
+  //     cb(res);
+  //   });
+  // }
 };
 
 module.exports = burger;

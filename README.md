@@ -1,12 +1,10 @@
 # Burger Time
-This is a simple app using CRUD methods with an ORM and SQL as the databasse.   
+This is a burger consuming app using CRUD methods with Node.js/Express.js/Handlebars.  
 Check out the app [here](https://alvin-burger-time.herokuapp.com/).
 
 ## Instructions
-1. Type in your favorite burger in the "Add a burger" box.
+1. Type in your favorite burger in the "Add a burger" box and click Submit.
 2. To eat the burger, click "Eat it!"
-3. Click 'Remove' to remove a burger from the Eaten list.
-
 
 
  

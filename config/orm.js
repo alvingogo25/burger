@@ -33,8 +33,8 @@ var orm = {
     });
   },
 
-// insertOne query
-  insertOne: function(table, cols, vals, cb) {
+// insert query
+  insert: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
     queryString += " (";
     queryString += cols.toString();
@@ -43,8 +43,8 @@ var orm = {
     queryString += printQuestionMarks(vals);
     queryString += ") ";
 
-    console.log(queryString);
-    console.log(vals);
+    // console.log(queryString);
+    // console.log(vals);
     connection.query(queryString, vals, function(err, res) {
       if (err) {
         throw err;
@@ -52,8 +52,8 @@ var orm = {
       cb(res);
     })
   },
-// updateOne query
-  updateOne: function(table, objColVals, devoured, cb) {
+// update query
+  update: function(table, objColVals, devoured, cb) {
     var queryString = "UPDATE " + table;
     queryString += " SET ";
     queryString += objToSql(objColVals);
@@ -66,20 +66,22 @@ var orm = {
       }
       cb(res);
     });
-  },
-// deleteOne query
-  deleteOne: function(table, removeBurger, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += removeBurger;
-
-    connection.query(queryString, function (err, res) {
-      if (err) {
-        throw err;
-      }
-      cb(res);
-    });
   }
+// delete query
+  // delete: function(table, burgerid, cb) {
+  //   var queryString = "DELETE FROM " + table;
+  //   queryString += " WHERE ";
+  //   queryString += burgerid;
+
+  //   console.log(queryString)
+
+  //   connection.query(queryString, function (err, result) {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     cb(result);
+  //   });
+  // }
 };
 
 module.exports = orm;
