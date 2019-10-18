@@ -15,7 +15,7 @@ body {
 .burgers {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0 10%;
   width: 300px;
 }
@@ -30,6 +30,7 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
 p {
   display: flex;
   border: solid;
