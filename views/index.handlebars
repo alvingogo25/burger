@@ -3,21 +3,26 @@
 <div class="burgerslist">
   <!-- uneaten bugers -->
   <div class="burgers">
-    <h3>Uneaten</h3>
+    <h2>Uneaten</h2>
     {{#each burgers}}
       {{#unless devoured}}
-        <p>{{burger_name}} <button class="eat" data-id="{{id}}">Eat it!</button></p>
-
+        <div class="burger shadow">
+          <span>{{burger_name}}</span>
+          <button class="eat" data-id="{{id}}">Eat it!</button>
+        </div>
       {{/unless}}
     {{/each}}
   </div>
 
   <!-- eaten burgers -->
   <div class="burgers">
-    <h3>Eaten</h3>
+    <h2>Eaten</h2>
     {{#each burgers}}
       {{#if devoured}}
-        <p>{{burger_name}} <button class="remove" data-id="{{id}}">Remove</button></p>
+        <div class="burger shadow">
+          <span>{{burger_name}}</span>
+          <button class="remove" data-id="{{id}}">Remove</button>
+        </div>
       {{/if}}
     {{/each}}
   </div>
@@ -25,10 +30,10 @@
 
 <!-- new burger submit box -->
   <div class="newburger">
-    <h3>Add a Burger</h3>
+    <h2>Add a Burger</h2>
     <form class="add-new" action="/api/burgers" method="post">
-      <textarea name="burger_name" rows="8" cols="50" placeholder="Enter Burger Here!"></textarea>
+      <textarea class="shadow" name="burger_name" rows="8" cols="50" placeholder="Enter Burger Here!"></textarea>
       <br>
-      <button type="submit" name="button">Submit</button>
+      <button class="shadow" type="submit" name="button">Submit</button>
     </form>
   </div>

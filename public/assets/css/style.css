@@ -1,23 +1,38 @@
-body {
-  font-family: sans-serif;
+:root {
+  --yellow: #fcdd60;
+  --red: #f0262a;
+  --pink: #f172a9;
+  --green: #95d244;
+  --blue: #9ac7e8;
+  --white: #ffffff;
 }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: navajowhite;
+  color: var(--white);
+}
+
 .container {
-  justify-content: center;
   margin: 5% 10%;
 }
 
 .burgerslist {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 
 }
+
 .burgers {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin: 0 10%;
-  width: 300px;
+  text-align: center;
+  width: 33.33%;
+}
+
+.burger + .burger {
+  margin-top:  .75em;
 }
 
 .newburger {
@@ -29,13 +44,24 @@ body {
 h1 {
   display: flex;
   justify-content: center;
+  color: var(--red);
 }
 
-p {
+h2 {
+  color: var(--blue);
+}
+
+h1, h2 {
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 2px;
+}
+
+.burger {
   display: flex;
-  border: solid;
-  padding: 10px;
+  padding: 0.75em;
   justify-content: space-between;
+  background: var(--green);
+  align-items: center;
 }
 
 .eat {
@@ -43,6 +69,49 @@ p {
   margin-left: 10px;
 }
 
+.shadow {
+  box-shadow: 2px 2px 7px rgba(0,0,0,.4);
+}
+
 textarea {
-  border: solid;
+  background: var(--yellow);
+  font-family: inherit;
+  font-size: 1em;
+  padding: .75em;
+  margin-bottom: .75em;
+  border: none;
+  color: var(--white);
+}
+
+button {
+  padding: .25em .75em;
+  font-size: 1em;
+  position: relative;
+  transition: color .4s ease 0s;
+  overflow: hidden;
+  z-index: 0;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  background: var(--pink);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: translate(-100%,100%);
+  transition: transform .3s ease 0s;
+  transform-origin: top right;
+  z-index: -1;
+}
+
+button:hover {
+  color: white;
+}
+
+button:hover::after {
+  transform: rotate(180deg) translate(100%, -100%);
 }
